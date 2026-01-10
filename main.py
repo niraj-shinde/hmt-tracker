@@ -26,16 +26,8 @@ WATCHES = [
         "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6ImxWQTNKZ3RYbWZaS3hUREhSUXp1dlE9PSIsInZhbHVlIjoicVlleGdWNUJXMmhqWFNFSmszaFV5UT09IiwibWFjIjoiNDcwY2I2MTQ0MzRkNGZkMGFkNmI5MTUwNDdkMTRkZGUzZTMwNDdkMTI5YTk4MDA4NmExYjA3MTlhYzQ2MzZmOSIsInRhZyI6IiJ9"
     },
     {
-        "name": "HMT Stellar DASS 06 Screw White",
-        "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6IkgvVEFUUWY2bHE5a25ybUF0QkY3alE9PSIsInZhbHVlIjoieklWeGgxMHVMSVBVcGtSR2VZUjhCUT09IiwibWFjIjoiNzRmMjY4NTQwNTIxMDAwY2I3YjI3NDQ5NjFmNzI2NTMzODE5ZDI5NDY2M2EyNjI2MDgwOWRlOTc5NzI5MjQ3NyIsInRhZyI6IiJ9"
-    },
-    {
         "name": "HMT Stellar DASS 04",
         "url": "https://www.hmtwatches.store/product/b8fbabdb-a49d-4e5d-92c6-71eda34c9382"
-    },
-    {
-        "name": "HMT Galaxy GS1G01 Black (Arabic)-SS",
-        "url": "https://www.hmtwatches.store/product/33cec8ef-dac9-4bfb-b4ba-2790b77b21ff"
     }
 ]
 
