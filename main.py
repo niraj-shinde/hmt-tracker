@@ -2,9 +2,9 @@ import requests
 import os
 from bs4 import BeautifulSoup # This tool parses the HTML code
 
-# --- YOUR WATCH LIST ---
-# Paste the exact links of the watches you want to track below.
-WATCH_URLS = [
+# --- YOUR WATCH LIST (PAIRS OF NAME + URL) ---
+# Update this list with the watches you want to track.
+WATCHES = [
     {
         "name": "HMT Tareeq Quartz Turquoise Blue",
         "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6ImNMb0FkRGZpeWJUWkM0OENBT2p6aEE9PSIsInZhbHVlIjoidlZndzJwNFZ5Y3RmdTlxcndrWmJWdz09IiwibWFjIjoiY2NiYTE4MTFkZDYyMTBiZWRmODE4ZDA0YTI5OTFkYTk2OWE3Y2I5OTBjZjBhZGU0Y2UzODE2YTdhOWMwNWM2OCIsInRhZyI6IiJ9"
