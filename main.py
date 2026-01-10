@@ -28,10 +28,6 @@ WATCHES = [
     {
         "name": "HMT Stellar DASS 06 Screw White",
         "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6IkgvVEFUUWY2bHE5a25ybUF0QkY3alE9PSIsInZhbHVlIjoieklWeGgxMHVMSVBVcGtSR2VZUjhCUT09IiwibWFjIjoiNzRmMjY4NTQwNTIxMDAwY2I3YjI3NDQ5NjFmNzI2NTMzODE5ZDI5NDY2M2EyNjI2MDgwOWRlOTc5NzI5MjQ3NyIsInRhZyI6IiJ9"
-    },
-    {
-        "name": "HMT Stellar DASL 07 Silver",
-        "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6ImpwcUk0bmRoMEUrYWt2MzVzelZWN0E9PSIsInZhbHVlIjoiNlVNUXJxQ3ltampmdERrN1lrZjljZz09IiwibWFjIjoiZTQzZThlNDcwZDVhYzNlYzg1NDQzMmU0YTMxZDk0NzM5YjEwMTgwOGU0ZWVhMmViNThmYzQ5ZDViMjFiYzEwNiIsInRhZyI6IiJ9"
     }
 ]
 
