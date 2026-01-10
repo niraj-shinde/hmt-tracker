@@ -5,13 +5,34 @@ from bs4 import BeautifulSoup # This tool parses the HTML code
 # --- YOUR WATCH LIST ---
 # Paste the exact links of the watches you want to track below.
 WATCH_URLS = [
-    "https://www.hmtwatches.in/product_details?id=eyJpdiI6ImNMb0FkRGZpeWJUWkM0OENBT2p6aEE9PSIsInZhbHVlIjoidlZndzJwNFZ5Y3RmdTlxcndrWmJWdz09IiwibWFjIjoiY2NiYTE4MTFkZDYyMTBiZWRmODE4ZDA0YTI5OTFkYTk2OWE3Y2I5OTBjZjBhZGU0Y2UzODE2YTdhOWMwNWM2OCIsInRhZyI6IiJ9",
-    "https://www.hmtwatches.in/product_details?id=eyJpdiI6IkJ6aEMzdlJ3dlBPb3V0SUt2Uzd6Qnc9PSIsInZhbHVlIjoiMW1WWU9NSGZsSUlzdllRT2FhMUNrUT09IiwibWFjIjoiMmNhYTFiMDJlOWI1YWIwZTAyMTEwYzRkOWQyYzJlYzg2ZWFiZjJlZGIxYzYzMzNhNjZlNjQwNDE1MTIxMGM0MiIsInRhZyI6IiJ9",
-    "https://www.hmtwatches.in/product_details?id=eyJpdiI6IjQyOE1qTTlsOXZZN0t6akpXSytXbHc9PSIsInZhbHVlIjoiTlg2QTNEaEliRlJiQ3A1ZFpGOFpXdz09IiwibWFjIjoiZjRjNTZjNjkwZjI0YzkwNjlhZTE3ZDE1Mjc2Y2RlNWQzNjEwNjJmMGY5YTM3YjQ0NzI0NTAzMDY2YmU5YmVlNSIsInRhZyI6IiJ9",
-    "https://www.hmtwatches.in/product_details?id=eyJpdiI6Ijl3YVA3RzFZZ1NDeW1YZU5pTmpGaXc9PSIsInZhbHVlIjoicnZZSjNhZE42M3kzMURoR1p4YXJDdz09IiwibWFjIjoiZTkwNTI4NDBhYTM5NWIxMDc2ODU3YTVjNTRlOTI3ZmQxZTViNmQ2MDRlZmMxZTlmYTY2NTcyYjZiOWZlNzcwNiIsInRhZyI6IiJ9",
-    "https://www.hmtwatches.in/product_details?id=eyJpdiI6ImxWQTNKZ3RYbWZaS3hUREhSUXp1dlE9PSIsInZhbHVlIjoicVlleGdWNUJXMmhqWFNFSmszaFV5UT09IiwibWFjIjoiNDcwY2I2MTQ0MzRkNGZkMGFkNmI5MTUwNDdkMTRkZGUzZTMwNDdkMTI5YTk4MDA4NmExYjA3MTlhYzQ2MzZmOSIsInRhZyI6IiJ9",
-    "https://www.hmtwatches.in/product_details?id=eyJpdiI6IkgvVEFUUWY2bHE5a25ybUF0QkY3alE9PSIsInZhbHVlIjoieklWeGgxMHVMSVBVcGtSR2VZUjhCUT09IiwibWFjIjoiNzRmMjY4NTQwNTIxMDAwY2I3YjI3NDQ5NjFmNzI2NTMzODE5ZDI5NDY2M2EyNjI2MDgwOWRlOTc5NzI5MjQ3NyIsInRhZyI6IiJ9",
-    "https://www.hmtwatches.in/product_details?id=eyJpdiI6ImpwcUk0bmRoMEUrYWt2MzVzelZWN0E9PSIsInZhbHVlIjoiNlVNUXJxQ3ltampmdERrN1lrZjljZz09IiwibWFjIjoiZTQzZThlNDcwZDVhYzNlYzg1NDQzMmU0YTMxZDk0NzM5YjEwMTgwOGU0ZWVhMmViNThmYzQ5ZDViMjFiYzEwNiIsInRhZyI6IiJ9"
+    {
+        "name": "HMT Tareeq Quartz Turquoise Blue",
+        "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6ImNMb0FkRGZpeWJUWkM0OENBT2p6aEE9PSIsInZhbHVlIjoidlZndzJwNFZ5Y3RmdTlxcndrWmJWdz09IiwibWFjIjoiY2NiYTE4MTFkZDYyMTBiZWRmODE4ZDA0YTI5OTFkYTk2OWE3Y2I5OTBjZjBhZGU0Y2UzODE2YTdhOWMwNWM2OCIsInRhZyI6IiJ9"
+    },
+    {
+        "name": "HMT Kohinoor Quartz B1 Maroon",
+        "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6IkJ6aEMzdlJ3dlBPb3V0SUt2Uzd6Qnc9PSIsInZhbHVlIjoiMW1WWU9NSGZsSUlzdllRT2FhMUNrUT09IiwibWFjIjoiMmNhYTFiMDJlOWI1YWIwZTAyMTEwYzRkOWQyYzJlYzg2ZWFiZjJlZGIxYzYzMzNhNjZlNjQwNDE1MTIxMGM0MiIsInRhZyI6IiJ9"
+    },
+    {
+        "name": "HMT Kohinoor Quartz B1 Light Blue Sunray",
+        "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6IjQyOE1qTTlsOXZZN0t6akpXSytXbHc9PSIsInZhbHVlIjoiTlg2QTNEaEliRlJiQ3A1ZFpGOFpXdz09IiwibWFjIjoiZjRjNTZjNjkwZjI0YzkwNjlhZTE3ZDE1Mjc2Y2RlNWQzNjEwNjJmMGY5YTM3YjQ0NzI0NTAzMDY2YmU5YmVlNSIsInRhZyI6IiJ9"
+    },
+    {
+        "name": "HMT Janata Automatic White",
+        "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6Ijl3YVA3RzFZZ1NDeW1YZU5pTmpGaXc9PSIsInZhbHVlIjoicnZZSjNhZE42M3kzMURoR1p4YXJDdz09IiwibWFjIjoiZTkwNTI4NDBhYTM5NWIxMDc2ODU3YTVjNTRlOTI3ZmQxZTViNmQ2MDRlZmMxZTlmYTY2NTcyYjZiOWZlNzcwNiIsInRhZyI6IiJ9"
+    },
+    {
+        "name": "HMT Himalaya Quartz Silver IPS",
+        "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6ImxWQTNKZ3RYbWZaS3hUREhSUXp1dlE9PSIsInZhbHVlIjoicVlleGdWNUJXMmhqWFNFSmszaFV5UT09IiwibWFjIjoiNDcwY2I2MTQ0MzRkNGZkMGFkNmI5MTUwNDdkMTRkZGUzZTMwNDdkMTI5YTk4MDA4NmExYjA3MTlhYzQ2MzZmOSIsInRhZyI6IiJ9"
+    },
+    {
+        "name": "HMT Stellar DASS 06 Screw White",
+        "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6IkgvVEFUUWY2bHE5a25ybUF0QkY3alE9PSIsInZhbHVlIjoieklWeGgxMHVMSVBVcGtSR2VZUjhCUT09IiwibWFjIjoiNzRmMjY4NTQwNTIxMDAwY2I3YjI3NDQ5NjFmNzI2NTMzODE5ZDI5NDY2M2EyNjI2MDgwOWRlOTc5NzI5MjQ3NyIsInRhZyI6IiJ9"
+    },
+    {
+        "name": "HMT Stellar DASL 07 Silver",
+        "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6ImpwcUk0bmRoMEUrYWt2MzVzelZWN0E9PSIsInZhbHVlIjoiNlVNUXJxQ3ltampmdERrN1lrZjljZz09IiwibWFjIjoiZTQzZThlNDcwZDVhYzNlYzg1NDQzMmU0YTMxZDk0NzM5YjEwMTgwOGU0ZWVhMmViNThmYzQ5ZDViMjFiYzEwNiIsInRhZyI6IiJ9"
+    }
 ]
 
 # --- CONFIGURATION ---
@@ -32,39 +53,39 @@ def check_stock():
     
     print("Starting smart scan...")
     
-    for link in WATCH_URLS:
+    for item in WATCHES:
+        name = item['name']
+        link = item['url']
+        
         try:
-            print(f"Scanning: {link}")
+            print(f"Scanning: {name}")
             response = requests.get(link, headers=headers)
-            
-            # Use BeautifulSoup to understand the page structure
             soup = BeautifulSoup(response.text, 'html.parser')
             
-            # THE SMART LOGIC:
-            # We look for 'button', 'a' (links), or 'input' tags.
-            # We ONLY check if "add to cart" is inside one of these clickable tags.
+            # Smart Check: Look for specific clickable buttons
             clickable_tags = soup.find_all(['button', 'a', 'input'])
             
             found_button = False
             for tag in clickable_tags:
-                # Check text inside buttons/links
+                # Check text inside tags
                 if tag.string and "add to cart" in tag.string.lower():
                     found_button = True
                     break
-                # Check value attribute (common for input buttons)
+                # Check value attribute
                 if tag.get('value') and "add to cart" in tag.get('value').lower():
                     found_button = True
                     break
             
             if found_button:
-                msg = f"🚨 HMT STOCK FOUND! \n\nI found a clickable 'Add to Cart' button!\nLink: {link}"
+                # --- NEW MESSAGE FORMAT ---
+                msg = f"🚨 IN STOCK: {name} \n\nGo grab it!\nLink: {link}"
                 send_alert(msg)
-                print(">>> FOUND STOCK! Alert sent.")
+                print(f">>> FOUND {name}! Alert sent.")
             else:
-                print("No 'Add to Cart' button found.")
+                print(f"{name} is not available.")
                 
         except Exception as e:
-            print(f"Error reading link: {e}")
+            print(f"Error checking {name}: {e}")
 
 if __name__ == "__main__":
     check_stock()
