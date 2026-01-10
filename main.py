@@ -1,5 +1,6 @@
 import requests
 import os
+from bs4 import BeautifulSoup # This tool parses the HTML code
 
 # --- YOUR WATCH LIST ---
 # Paste the exact links of the watches you want to track below.
@@ -13,35 +14,57 @@ WATCH_URLS = [
     "https://www.hmtwatches.in/product_details?id=eyJpdiI6ImpwcUk0bmRoMEUrYWt2MzVzelZWN0E9PSIsInZhbHVlIjoiNlVNUXJxQ3ltampmdERrN1lrZjljZz09IiwibWFjIjoiZTQzZThlNDcwZDVhYzNlYzg1NDQzMmU0YTMxZDk0NzM5YjEwMTgwOGU0ZWVhMmViNThmYzQ5ZDViMjFiYzEwNiIsInRhZyI6IiJ9"
 ]
 
-# --- THE LOGIC (DO NOT CHANGE) ---
+# --- CONFIGURATION ---
 TOKEN = os.environ['TELEGRAM_TOKEN']
 CHAT_ID = os.environ['TELEGRAM_CHAT_ID']
 
 def send_alert(message):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-    requests.get(url, params={"chat_id": CHAT_ID, "text": message})
+    try:
+        requests.get(url, params={"chat_id": CHAT_ID, "text": message})
+    except Exception as e:
+        print(f"Telegram Error: {e}")
 
 def check_stock():
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     }
     
+    print("Starting smart scan...")
+    
     for link in WATCH_URLS:
         try:
-            print(f"Checking: {link}")
+            print(f"Scanning: {link}")
             response = requests.get(link, headers=headers)
-            content = response.text.lower()
             
-            # HMT logic: If "out of stock" text is NOT on the page, it might be available
-            if "out of stock" not in content and "add to cart" in content:
-                msg = f"🚨 HMT STOCK ALERT! \n\nWatch might be available!\nLink: {link}"
+            # Use BeautifulSoup to understand the page structure
+            soup = BeautifulSoup(response.text, 'html.parser')
+            
+            # THE SMART LOGIC:
+            # We look for 'button', 'a' (links), or 'input' tags.
+            # We ONLY check if "add to cart" is inside one of these clickable tags.
+            clickable_tags = soup.find_all(['button', 'a', 'input'])
+            
+            found_button = False
+            for tag in clickable_tags:
+                # Check text inside buttons/links
+                if tag.string and "add to cart" in tag.string.lower():
+                    found_button = True
+                    break
+                # Check value attribute (common for input buttons)
+                if tag.get('value') and "add to cart" in tag.get('value').lower():
+                    found_button = True
+                    break
+            
+            if found_button:
+                msg = f"🚨 HMT STOCK FOUND! \n\nI found a clickable 'Add to Cart' button!\nLink: {link}"
                 send_alert(msg)
-                print("Alert sent!")
+                print(">>> FOUND STOCK! Alert sent.")
             else:
-                print("Still out of stock.")
+                print("No 'Add to Cart' button found.")
                 
         except Exception as e:
-            print(f"Error checking link: {e}")
+            print(f"Error reading link: {e}")
 
 if __name__ == "__main__":
     check_stock()
