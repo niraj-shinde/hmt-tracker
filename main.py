@@ -10,6 +10,10 @@ WATCHES = [
         "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6ImNMb0FkRGZpeWJUWkM0OENBT2p6aEE9PSIsInZhbHVlIjoidlZndzJwNFZ5Y3RmdTlxcndrWmJWdz09IiwibWFjIjoiY2NiYTE4MTFkZDYyMTBiZWRmODE4ZDA0YTI5OTFkYTk2OWE3Y2I5OTBjZjBhZGU0Y2UzODE2YTdhOWMwNWM2OCIsInRhZyI6IiJ9"
     },
     {
+        "name": "HMT Tareeq Quartz Turquoise Blue From Store",
+        "url": "https://www.hmtwatches.store/product/7281c42e-604a-4bd9-b011-066aa202eddd"
+    },
+    {
         "name": "HMT Kohinoor Quartz B Maroon Sunray From Store",
         "url": "https://www.hmtwatches.store/product/77733243-645c-4eac-8e69-63425e1cc09b"
     },
