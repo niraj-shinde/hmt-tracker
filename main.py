@@ -14,8 +14,8 @@ WATCHES = [
         "url": "https://www.hmtwatches.store/product/7281c42e-604a-4bd9-b011-066aa202eddd"
     },
     {
-        "name": "HMT Kohinoor Quartz B Maroon Sunray From Store",
-        "url": "https://www.hmtwatches.store/product/77733243-645c-4eac-8e69-63425e1cc09b"
+        "name": "HMT Kohinoor Quartz B1 Maroon Sunray From Store",
+        "url": "https://www.hmtwatches.store/product/0035cf80-48d5-4cf3-a02f-1f36b01071a5"
     },
     {
         "name": "HMT Kohinoor Quartz B1 Maroon",
