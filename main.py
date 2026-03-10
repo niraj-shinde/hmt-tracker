@@ -9,6 +9,10 @@ WATCHES = [
         "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6ImNMb0FkRGZpeWJUWkM0OENBT2p6aEE9PSIsInZhbHVlIjoidlZndzJwNFZ5Y3RmdTlxcndrWmJWdz09IiwibWFjIjoiY2NiYTE4MTFkZDYyMTBiZWRmODE4ZDA0YTI5OTFkYTk2OWE3Y2I5OTBjZjBhZGU0Y2UzODE2YTdhOWMwNWM2OCIsInRhZyI6IiJ9"
     },
     {
+        "name" : "test hmt bahadur from store",
+        "url": "https://www.hmtwatches.store/product/c790cca4-cf17-40e7-bd5b-6c45ef974a17"
+    },
+    {
         "name": "HMT Tareeq Quartz Turquoise Blue From Store",
         "url": "https://www.hmtwatches.store/product/7281c42e-604a-4bd9-b011-066aa202eddd"
     },
