@@ -1,9 +1,8 @@
 import requests
 import os
-from bs4 import BeautifulSoup # This tool parses the HTML code
+from bs4 import BeautifulSoup
 
-# --- YOUR WATCH LIST (PAIRS OF NAME + URL) ---
-# Update this list with the watches you want to track.
+# --- YOUR WATCH LIST ---
 WATCHES = [
     {
         "name": "HMT Tareeq Quartz Turquoise Blue",
@@ -66,22 +65,41 @@ def check_stock():
             response = requests.get(link, headers=headers)
             soup = BeautifulSoup(response.text, 'html.parser')
             
-            # Smart Check: Look for specific clickable buttons
+            is_new_store = "hmtwatches.store" in link
+            found_button = False
+            is_explicitly_out_of_stock = False
+            
+            # 1. NEW STORE OVERRIDE: Check if the exact "Out of Stock" badge is on the page
+            if is_new_store:
+                for tag in soup.find_all(['button', 'div', 'span']):
+                    # Clean the text up to check exactly for "out of stock"
+                    clean_text = tag.get_text(strip=True).lower().replace('\xa0', ' ')
+                    if clean_text == "out of stock":
+                        is_explicitly_out_of_stock = True
+                        break
+            
+            # 2. STANDARD CHECK: Look for valid, clickable Add to Cart / Buy Now buttons
             clickable_tags = soup.find_all(['button', 'a', 'input'])
             
-            found_button = False
             for tag in clickable_tags:
-                # Check text inside tags
-                if tag.string and "add to cart" in tag.string.lower():
-                    found_button = True
-                    break
-                # Check value attribute
-                if tag.get('value') and "add to cart" in tag.get('value').lower():
+                # IMPORTANT: Skip buttons that are turned off/disabled in the background code
+                if tag.has_attr('disabled') or tag.get('aria-disabled') == 'true':
+                    continue
+                
+                text = ""
+                if tag.name == 'input':
+                    text = tag.get('value', '').lower().strip()
+                else:
+                    text = tag.get_text(separator=' ', strip=True).lower()
+                
+                if "add to cart" in text or "buy now" in text:
                     found_button = True
                     break
             
-            if found_button:
-                # --- NEW MESSAGE FORMAT ---
+            # 3. THE FINAL DECISION
+            if is_new_store and is_explicitly_out_of_stock:
+                print(f"{name} is explicitly marked Out of Stock on the Store. Skipping alerts.")
+            elif found_button:
                 msg = f"🚨 IN STOCK: {name} \n\nGo grab it!\nLink: {link}"
                 send_alert(msg)
                 print(f">>> FOUND {name}! Alert sent.")
