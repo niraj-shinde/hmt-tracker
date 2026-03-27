@@ -17,6 +17,10 @@ WATCHES = [
         "url": "https://www.hmtwatches.store/product/c30e795e-17ba-4454-8665-349b87f45a06"
     },
     {
+        "name": "HMT Plus",
+        "url": "https://www.hmtwatches.in/product_overview?id=eyJpdiI6Im41dU8yTVFCLy9RdEtNSTNrNWJKcFE9PSIsInZhbHVlIjoiODg2WjQ2d3Q5b1NJS0ZOcGpESm9xdz09IiwibWFjIjoiNjY2N2VlYTMwNWNiZDkzZmYyYjU3MmMwMjE2MWJjYWNmZjFiZDI0MTk4OWQyMTY4ZjRiNjEyMzQyZmY0MWY4OSIsInRhZyI6IiJ9"
+    },
+    {
         "name": "HMT Kohinoor Quartz B1 Maroon Sunray From Store",
         "url": "https://www.hmtwatches.store/product/0035cf80-48d5-4cf3-a02f-1f36b01071a5"
     },
