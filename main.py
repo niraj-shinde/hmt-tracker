@@ -20,10 +20,10 @@ WATCHES = [
         "name": "HMT Kohinoor Quartz B1 Maroon Sunray From Store",
         "url": "https://www.hmtwatches.store/product/0035cf80-48d5-4cf3-a02f-1f36b01071a5"
     },
-    {
-        "name": "HMT Kohinoor Quartz B1 Maroon",
-        "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6IkJ6aEMzdlJ3dlBPb3V0SUt2Uzd6Qnc9PSIsInZhbHVlIjoiMW1WWU9NSGZsSUlzdllRT2FhMUNrUT09IiwibWFjIjoiMmNhYTFiMDJlOWI1YWIwZTAyMTEwYzRkOWQyYzJlYzg2ZWFiZjJlZGIxYzYzMzNhNjZlNjQwNDE1MTIxMGM0MiIsInRhZyI6IiJ9"
-    },
+    # {
+    #     "name": "HMT Kohinoor Quartz B1 Maroon",
+    #     "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6IkJ6aEMzdlJ3dlBPb3V0SUt2Uzd6Qnc9PSIsInZhbHVlIjoiMW1WWU9NSGZsSUlzdllRT2FhMUNrUT09IiwibWFjIjoiMmNhYTFiMDJlOWI1YWIwZTAyMTEwYzRkOWQyYzJlYzg2ZWFiZjJlZGIxYzYzMzNhNjZlNjQwNDE1MTIxMGM0MiIsInRhZyI6IiJ9"
+    # },
     {
         "name": "HMT Kohinoor Quartz B1 Light Blue Sunray",
         "url": "https://www.hmtwatches.in/product_details?id=eyJpdiI6IjQyOE1qTTlsOXZZN0t6akpXSytXbHc9PSIsInZhbHVlIjoiTlg2QTNEaEliRlJiQ3A1ZFpGOFpXdz09IiwibWFjIjoiZjRjNTZjNjkwZjI0YzkwNjlhZTE3ZDE1Mjc2Y2RlNWQzNjEwNjJmMGY5YTM3YjQ0NzI0NTAzMDY2YmU5YmVlNSIsInRhZyI6IiJ9"
